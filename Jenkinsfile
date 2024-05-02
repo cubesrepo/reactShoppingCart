@@ -14,7 +14,7 @@ pipeline{
         }
         stage("Run tests"){
             steps{
-                bat 'reactShoppingCartVENV\\Scripts\\activate && pytest -v --html=report.html'
+                bat 'reactShoppingCartVENV\\Scripts\\activate && pytest -v --html=report.html --headless'
             }
         }
     }
