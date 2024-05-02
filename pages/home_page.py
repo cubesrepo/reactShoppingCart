@@ -93,8 +93,8 @@ class HomePage(BasePage):
 
             #get the text of sub total
             sub_total = self.get_text(test_data.home.SUB_TOTAL, 15).replace('$ ', '')
-            print(f"total {total}")
-            print(f"subtotal {sub_total}")
+            print(f"total addtocart {round(float(total), 1)}")
+            print(f"subtotal addtocart{round(float(sub_total), 1)}")
 
             #check if the total is the same as sub total
             assert round(float(total), 1) == round(float(sub_total), 1)
