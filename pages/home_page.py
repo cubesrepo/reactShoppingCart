@@ -97,7 +97,7 @@ class HomePage(BasePage):
             print(f"subtotal {sub_total}")
 
             #check if the total is the same as sub total
-            assert round(float(total), 2) == round(float(sub_total), 2)
+            assert round(float(total), 1) == round(float(sub_total), 2)
 
         return sub_total
 

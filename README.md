@@ -1,6 +1,6 @@
-**Hello**🖐 **Automated Testing for automationExercise Demo Website with Selenium (Pytest, POM, HTML Reports, Jenkins Pipeline)**
+**Hello**🖐 **Automated Testing for reactShoppingCart Demo Website with Selenium (Pytest, POM, HTML Reports, Jenkins Pipeline)**
 
-This project tests various functionalities of the automationExercise(E-COMMERCE) demo website, such as register, add to cart, remove products in cart,  and place order.
+This project tests various functionalities of the reactShoppingCart(E-COMMERCE) demo website, such as add to cart all products, verify the quantity of items in the badge cart, and checkout.
 ___________________________________________
 
 🎯 **Pre-requisites:**
