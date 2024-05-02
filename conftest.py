@@ -3,6 +3,7 @@ import time
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.firefox.service import Service as GeckoService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -18,8 +19,11 @@ def driver(request):
     browser = request.config.getoption("--browser")
 
     if browser == "chrome":
+        options = ChromeOptions()
+        options.add_argument("--headless")
+        options.add_argument("--window-size=1920,1080")
         service = ChromeService(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service)
+        driver = webdriver.Chrome(service=service, options=options)
     elif browser == "edge":
         service = EdgeService(EdgeChromiumDriverManager().install())
         driver = webdriver.Edge(service=service)
