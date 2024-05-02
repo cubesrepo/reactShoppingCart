@@ -19,9 +19,10 @@ def driver(request):
     browser = request.config.getoption("--browser")
 
     if browser == "chrome":
+        #run in headless mode
         options = ChromeOptions()
         options.add_argument("--headless")
-        options.add_argument("--start-maximized")
+        options.add_argument("--window-size=1920,1080")
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
     elif browser == "edge":
