@@ -45,6 +45,7 @@ class HomePage(BasePage):
         # store the product_lists_price
         product_lists = []
         sub_total = ""
+        index = 0
         for i in range(1, 17):
 
             # loop for clicking x when the product is at the 3rd in each row
@@ -73,7 +74,8 @@ class HomePage(BasePage):
 
             #assertion of badge count is adding
             print(f"badge count  {badge_count}")
-            assert i == int(badge_count), "the badge count is not upadting"
+            index += 1
+            assert index == int(badge_count), "the badge count is not upadting"
 
             time.sleep(0.2)
 
@@ -93,11 +95,11 @@ class HomePage(BasePage):
 
             #get the text of sub total
             sub_total = self.get_text(test_data.home.SUB_TOTAL, 15).replace('$ ', '')
-            print(f"total addtocart {round(float(total), 1)}")
-            print(f"subtotal addtocart{round(float(sub_total), 1)}")
+            print(f"total addtocart {round(float(total), 2)}")
+            print(f"subtotal addtocart{round(float(sub_total), 2)}")
 
             #check if the total is the same as sub total
-            assert round(float(total), 1) == round(float(sub_total), 1)
+            assert round(float(total), 2) == round(float(sub_total), 2)
 
         return sub_total
 
