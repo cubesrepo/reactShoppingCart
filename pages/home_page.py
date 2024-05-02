@@ -45,7 +45,7 @@ class HomePage(BasePage):
         # store the product_lists_price
         product_lists = []
         sub_total = ""
-        index = 0
+
         for i in range(1, 17):
 
             # loop for clicking x when the product is at the 3rd in each row
@@ -74,8 +74,8 @@ class HomePage(BasePage):
 
             #assertion of badge count is adding
             print(f"badge count  {badge_count}")
-            index += 1
-            assert index == int(badge_count), "the badge count is not upadting"
+
+            assert i == int(badge_count), "the badge count is not upadting"
 
             time.sleep(0.2)
 
